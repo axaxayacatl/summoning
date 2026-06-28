@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,8 +17,8 @@ box-sizing:border-box;
 }
 
 html,body{
-height:100%;
-overflow:hidden;
+min-height:100%;
+overflow-y:auto;
 }
 
 body{
@@ -27,14 +26,16 @@ body{
 background:#030303;
 
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:flex-start;
 
 position:relative;
 
 font-family:Inter,sans-serif;
 
 color:#fff;
+
+padding:80px 0;
 
 }
 
@@ -45,7 +46,7 @@ body:before{
 
 content:"";
 
-position:absolute;
+position:fixed;
 
 inset:0;
 
@@ -64,6 +65,8 @@ linear-gradient(
 #030303
 );
 
+z-index:-2;
+
 }
 
 
@@ -73,7 +76,7 @@ body:after{
 
 content:"";
 
-position:absolute;
+position:fixed;
 
 inset:-50%;
 
@@ -93,6 +96,8 @@ filter:blur(35px);
 animation:
 
 scan 12s cubic-bezier(.4,0,.2,1) infinite;
+
+z-index:-1;
 
 }
 
@@ -134,12 +139,11 @@ opacity:.15;
 }
 
 
-
 /* micro digital grain */
 
 .grain{
 
-position:absolute;
+position:fixed;
 
 inset:0;
 
@@ -151,13 +155,14 @@ url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/20
 
 mix-blend-mode:screen;
 
-}
+pointer-events:none;
 
+}
 
 
 /* interface */
 
-nav{
+.container{
 
 width:86%;
 
@@ -167,9 +172,22 @@ display:flex;
 
 flex-direction:column;
 
-gap:10px;
+align-items:center;
 
 z-index:5;
+
+}
+
+
+nav{
+
+width:100%;
+
+display:flex;
+
+flex-direction:column;
+
+gap:10px;
 
 }
 
@@ -263,9 +281,7 @@ border-color:rgba(255,255,255,.45);
 
 .signature{
 
-position:absolute;
-
-bottom:34px;
+margin-top:60px;
 
 font-family:"Cormorant Garamond",serif;
 
@@ -277,17 +293,16 @@ letter-spacing:.12em;
 
 color:#fff;
 
-z-index:10;
+padding-bottom:80px;
 
 }
-
 
 
 /* subtle coordinates */
 
 .data{
 
-position:absolute;
+position:fixed;
 
 top:25px;
 
@@ -318,18 +333,30 @@ AX // 001
 </div>
 
 
+<div class="container">
+
 <nav>
 
 <a href="https://axaxayacatl.github.io/palecircuitdiary/">Pale Circuit Diary</a>
-<a href="https://axaxayacatl.github.io/blacksignal/">Black Signal Institute </a>
+
+<a href="https://axaxayacatl.github.io/blacksignal/">Black Signal Institute</a>
+
 <a href="https://axaxayacatl.github.io/spine">SPINE</a>
+
 <a href="https://axaxayacatl.github.io/theprisononthemoon/">The Prison on The Moon</a>
+
 <a href="https://axaxayacatl.github.io/liminalabysscaress/">Liminal Abyss Caress</a>
+
 <a href="https://axaxayacatl.github.io/aethralis/">Aethralis</a>
+
 <a href="https://axaxayacatl.github.io/moloch/">MOLOCH</a>
+
 <a href="https://sugarocculta.neocities.org/">Sugar Occulta</a>
+
 <a href="https://axaxayacatl.github.io/ironpaw/">IRON PAW</a>
+
 <a href="https://axaxayacatl.github.io/odaf/">Ordo Domus Aeternae Forma</a>
+
 <a href="https://axaxayacatl.github.io/object09/">OBJECT 09</a>
 
 </nav>
@@ -340,6 +367,8 @@ Axayacatl
 </div>
 
 
+</div>
+
+
 </body>
 </html>
-```

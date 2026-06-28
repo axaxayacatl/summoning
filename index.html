@@ -1,0 +1,345 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Axayacatl</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html,body{
+height:100%;
+overflow:hidden;
+}
+
+body{
+
+background:#030303;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+position:relative;
+
+font-family:Inter,sans-serif;
+
+color:#fff;
+
+}
+
+
+/* synthetic glass atmosphere */
+
+body:before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+
+radial-gradient(
+ellipse at 50% 45%,
+rgba(255,255,255,.08),
+transparent 32%
+),
+
+linear-gradient(
+120deg,
+#050505,
+#101010,
+#030303
+);
+
+}
+
+
+/* holographic reflective scan */
+
+body:after{
+
+content:"";
+
+position:absolute;
+
+inset:-50%;
+
+background:
+
+linear-gradient(
+115deg,
+transparent 35%,
+rgba(255,255,255,.02) 42%,
+rgba(255,255,255,.18) 49%,
+rgba(255,255,255,.03) 55%,
+transparent 65%
+);
+
+filter:blur(35px);
+
+animation:
+
+scan 12s cubic-bezier(.4,0,.2,1) infinite;
+
+}
+
+
+@keyframes scan{
+
+0%{
+
+transform:
+translateX(-45%)
+rotate(-8deg);
+
+opacity:.15;
+
+}
+
+35%{
+
+opacity:.7;
+
+}
+
+70%{
+
+opacity:.35;
+
+}
+
+100%{
+
+transform:
+translateX(45%)
+rotate(8deg);
+
+opacity:.15;
+
+}
+
+}
+
+
+
+/* micro digital grain */
+
+.grain{
+
+position:absolute;
+
+inset:0;
+
+opacity:.08;
+
+background-image:
+
+url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+
+mix-blend-mode:screen;
+
+}
+
+
+
+/* interface */
+
+nav{
+
+width:86%;
+
+max-width:380px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:10px;
+
+z-index:5;
+
+}
+
+
+a{
+
+height:58px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-decoration:none;
+
+color:#eee;
+
+
+border:1px solid rgba(255,255,255,.14);
+
+background:
+
+linear-gradient(
+90deg,
+rgba(255,255,255,.015),
+rgba(255,255,255,.06),
+rgba(255,255,255,.015)
+);
+
+
+font-size:10px;
+
+letter-spacing:.45em;
+
+text-transform:lowercase;
+
+
+transition:.5s;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+
+
+a:before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:-100%;
+
+height:100%;
+width:80%;
+
+background:
+
+linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.15),
+transparent
+);
+
+transition:.8s;
+
+}
+
+
+a:hover:before{
+
+left:120%;
+
+}
+
+
+a:hover{
+
+border-color:rgba(255,255,255,.45);
+
+}
+
+
+
+/* logo */
+
+.signature{
+
+position:absolute;
+
+bottom:34px;
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:54px;
+
+font-weight:300;
+
+letter-spacing:.12em;
+
+color:#fff;
+
+z-index:10;
+
+}
+
+
+
+/* subtle coordinates */
+
+.data{
+
+position:absolute;
+
+top:25px;
+
+right:28px;
+
+font-size:8px;
+
+letter-spacing:.4em;
+
+color:rgba(255,255,255,.25);
+
+font-family:Inter;
+
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+
+<div class="grain"></div>
+
+<div class="data">
+AX // 001
+</div>
+
+
+<nav>
+
+<a href="https://axaxayacatl.github.io/palecircuitdiary/">Pale Circuit Diary</a>
+<a href="https://axaxayacatl.github.io/blacksignal/">Black Signal Institute </a>
+<a href="https://axaxayacatl.github.io/spine">SPINE</a>
+<a href="https://axaxayacatl.github.io/theprisononthemoon/">The Prison on The Moon</a>
+<a href="https://axaxayacatl.github.io/liminalabysscaress/">Liminal Abyss Caress</a>
+<a href="https://axaxayacatl.github.io/aethralis/">Aethralis</a>
+<a href="https://axaxayacatl.github.io/moloch/">MOLOCH</a>
+<a href="https://sugarocculta.neocities.org/">Sugar Occulta</a>
+<a href="https://axaxayacatl.github.io/ironpaw/">IRON PAW</a>
+<a href="https://axaxayacatl.github.io/odaf/">Ordo Domus Aeternae Forma</a>
+<a href="https://axaxayacatl.github.io/object09/">OBJECT 09</a>
+
+</nav>
+
+
+<div class="signature">
+Axayacatl
+</div>
+
+
+</body>
+</html>
+```
